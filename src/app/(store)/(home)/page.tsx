@@ -1,19 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { api } from "@/data/api";
-import { Product } from "@/types/products";
+import { getFeaturedProducts } from "@/service/get-featured-products";
+import { Metadata } from "next";
 
-async function getFeaturedProducts(): Promise<Product[]> {
-  const response = await api('/products/featured', {
-    cache: 'no-store'
-    // next: {
-    //   revalidate: 60 * 60, // 1 hora
-    // }
-  })
-  return await response.json()
-
+export const metadata: Metadata = {
+  title: 'Home'
 }
-
 export default async function Home() {
   const [highlightedProduct, ...othersProducts] = await getFeaturedProducts()
 

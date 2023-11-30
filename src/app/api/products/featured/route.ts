@@ -1,4 +1,4 @@
-import data from '../data.json'
+import data from '@/json/data.json'
 
 export async function GET() {
   await new Promise((resolve) => setTimeout(resolve, 2000))

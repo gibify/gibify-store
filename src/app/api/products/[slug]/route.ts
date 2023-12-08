@@ -11,8 +11,9 @@ export async function GET(
 
   if (!product)
   {
-    return Response.json({ message: 'Product not Found' }, { status: 400 })
+
+    return new Response('Product not Found', { status: 400 })
   }
 
-  return Response.json(product)
+  return Response.json(product, { status: 200 })
 }

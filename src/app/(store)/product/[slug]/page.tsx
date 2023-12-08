@@ -23,11 +23,6 @@ export async function generateStaticParams() {
 export default async function ProductPage({ params }: { params: { slug: string } }) {
   const product = await getProduct(params.slug)
 
-  const colors = product?.variants?.flatMap((variant) => variant.colors)
-  const sizes = product?.variants?.flatMap((variant) => variant.sizes)
-
-  console.log('colors and sizes:', colors, sizes)
-
   return (
     <main className="relative grid max-h-[860px] grid-cols-3">
       <div className="col-span-2 overflow-hidden">
@@ -59,30 +54,20 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
         <div className="mt-8 space-y-4">
           <span>Tamanhos</span>
-          <div className="flex gap-2">
-            {sizes.map((size, idx) => (
-              <button
-                key={idx}
-                className="flex items-center justify-center rounded-full h-9 w-14 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200  dark:border-zinc-700 text-zinc-950 dark:text-white"
-              >
-                {size}
-              </button>
-            ))}
-          </div>
+          <button
+            className="flex items-center justify-center rounded-full h-9 w-14 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200  dark:border-zinc-700 text-zinc-950 dark:text-white"
+          >
+            m
+          </button>
         </div>
 
         <div className="mt-8 space-y-4">
           <span>Cores</span>
-          <div className="flex gap-2">
-            {colors.map((color, idx) => (
-              <button
-                key={idx}
-                className={`flex items-center justify-center rounded-full h-9 w-auto px-3 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200  dark:border-zinc-700 text-zinc-950 dark:text-white`}
-              >
-                {color}
-              </button>
-            ))}
-          </div>
+          <button
+            className="flex items-center justify-center rounded-full h-9 w-14 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200  dark:border-zinc-700 text-zinc-950 dark:text-white"
+          >
+            preto
+          </button>
         </div>
       </div>
     </main>

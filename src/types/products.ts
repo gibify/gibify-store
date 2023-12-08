@@ -6,8 +6,4 @@ export interface Product {
   image: string
   description: string
   featured: boolean
-  variants: {
-    colors: string[]
-    sizes: string[]
-  }[]
 }

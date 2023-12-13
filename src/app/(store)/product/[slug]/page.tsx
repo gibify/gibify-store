@@ -1,3 +1,4 @@
+import { AddToCart } from "@/components/add-to-cart";
 import { getFeaturedProducts } from "@/service/get-featured-products";
 import { getProduct } from "@/service/get-product";
 import { Product } from "@/types/products";
@@ -69,6 +70,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
             preto
           </button>
         </div>
+        <AddToCart productId={product.id} />
       </div>
     </main>
   )

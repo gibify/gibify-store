@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Search, ShoppingBag, ShoppingCart } from 'lucide-react'
+import { CartWidget } from "./cart-widget";
 export function Header() {
   return (
     <header className="flex items-center justify-between gap-5">
@@ -10,10 +11,7 @@ export function Header() {
           <input type="text" placeholder="Buscar Produtos..." className="flex-1 bg-transparent text-sm outline-none placeholder:text-zinc-500" />
         </form>
       </div>
-      <div className="relative text-zinc-950 dark:text-zinc-50">
-        <ShoppingBag className="w-5 h-5" />
-        <span className="absolute -top-2 -right-2">1</span>
-      </div>
+      <CartWidget />
     </header>
   )
 }

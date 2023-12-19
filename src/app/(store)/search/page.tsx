@@ -4,8 +4,7 @@ import Link from "next/link"
 import { searchProducts } from "@/service/search-products"
 import { redirect } from "next/navigation"
 
-export default async function SearcgPage({ searchParams }: { searchParams: { q: string } }) {
-  console.log(searchParams.q)
+export default async function SearchPage({ searchParams }: { searchParams: { q: string } }) {
   if (!searchParams.q)
   {
     redirect('/');

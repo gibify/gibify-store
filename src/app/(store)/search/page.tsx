@@ -25,7 +25,7 @@ export default async function SearchPage({ searchParams }: { searchParams: { q: 
           return (
             <Link
               key={product.id}
-              href={`/product/`}
+              href={`/product/${product.id}`}
               className="group relative rounded-lg flex items-end justify-center dark:bg-zinc-900 bg-zinc-100 overflow-hidden"
             >
               <Image

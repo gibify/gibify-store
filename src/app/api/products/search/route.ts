@@ -11,11 +11,13 @@ export async function GET(request: NextRequest) {
     return product.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
   })
 
+
   if (!products.length)
   {
 
     return new Response('Product not Found', { status: 400 })
   }
 
-  return Response.json(products, { status: 200 })
+  const result = JSON.stringify(products)
+  return new Response(result, { status: 200 })
 }

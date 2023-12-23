@@ -2,5 +2,6 @@ import data from '@/json/data.json'
 
 
 export async function GET() {
-  return Response.json(data.products)
+  const result = JSON.stringify(data.products)
+  return new Response(result, { status: 200 })
 }

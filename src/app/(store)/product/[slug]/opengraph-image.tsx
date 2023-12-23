@@ -1,12 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image'
 import { ImageResponse } from 'next/og'
 import { getProduct } from '@/service/get-product'
 import colors from 'tailwindcss/colors'
 
-export const runtime = 'edge'
+export const alt = 'Gibify Store';
 
-export const alt = 'Gibify Store'
 export const size = {
   width: 1200,
   height: 630,

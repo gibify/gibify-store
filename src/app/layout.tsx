@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     default: 'Gibify Store'
   },
   description: 'Loja online.',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_API_BASE_URL || ''),
 }
 
 export default function RootLayout({
